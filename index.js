@@ -7,16 +7,19 @@
 
 function stringToArray(string) {
   var arrHasil = [];
-  huruf = ''
-  for (var i = 0; i < string.length; i++) {
-    huruf += string[i];
-    if (string[i + 1] == ',') {
+  var split = string.split('')
+  // huruf = ''
+  var arr = []
+  for (var i = 0; i < split.length; i++) {
+    // huruf += split[i];
+    arr.push(split[i]);
+    if (split[i + 1] == ',') {
       i += 1
-      arrHasil.push(huruf);
-      huruf = ''
+      arrHasil.push(arr);
+      arr = []
     }
   }
-  arrHasil.push(huruf)
+  arrHasil.push(arr)
   return arrHasil
 }
 
